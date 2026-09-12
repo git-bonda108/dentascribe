@@ -8,7 +8,7 @@ Tables:
   attestations — provider sign-off events
   exports      — exported PDF / DOCX / JSON files produced for an encounter
 
-Design notes for Claude Code:
+Design notes:
 - All JSON columns store TEXT. The wrapper handles json.dumps/loads.
 - `created_at` everywhere as ISO8601 UTC.
 - Soft delete on encounters via `deleted_at` + retention sweep in storage/retention.py.

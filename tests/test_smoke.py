@@ -10,7 +10,6 @@ ROOT = pathlib.Path(__file__).parent.parent
 
 def test_repo_skeleton_exists():
     expected = [
-        "CLAUDE.md",
         "README.md",
         "pyproject.toml",
         ".env.example",
@@ -30,14 +29,13 @@ def test_repo_skeleton_exists():
         assert (ROOT / rel).exists(), f"Missing: {rel}"
 
 
-def test_claude_md_has_anchors():
-    text = (ROOT / "CLAUDE.md").read_text(encoding="utf-8")
+def test_readme_has_anchors():
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
     for anchor in [
         "DentaScribe",
-        "Dallas, Texas",
         "TSBDE",
-        "cdt_allow_list.json",
         "claude-sonnet-4-5",
         "uv",
+        "docs/ARCHITECTURE.md",
     ]:
-        assert anchor in text, f"CLAUDE.md missing anchor: {anchor}"
+        assert anchor in text, f"README.md missing anchor: {anchor}"

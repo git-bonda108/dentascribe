@@ -41,3 +41,7 @@ build/
 patient_data/
 exports_local/
 recordings/
+
+# Local tool/runtime artifacts
+.claude/
+.runtime/*.log

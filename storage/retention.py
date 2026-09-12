@@ -5,7 +5,7 @@
   - Minor records: retained until the patient turns 21 (age of majority 18 + 3),
     and at least 5 years after the last treatment.
 
-This module exposes two functions Claude Code should wire up:
+This module exposes two functions:
   - `flag_due_for_purge(db_path)` — returns a list of encounter_ids past retention.
     DOES NOT delete anything. Surfaces a list for the Admin page.
   - `purge_flagged(encounter_ids, db_path, dry_run=True)` — hard-deletes encounters
